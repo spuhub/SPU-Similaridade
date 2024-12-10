@@ -23,7 +23,7 @@
 """
 from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
-from qgis.PyQt.QtWidgets import QAction
+from qgis.PyQt.QtWidgets import QAction, QToolBar
 
 # Initialize Qt resources from file resources.py
 from .resources_rc import *
@@ -61,7 +61,14 @@ class SpuSimilaridade:
 
         # Declare instance attributes
         self.actions = []
-        self.menu = self.tr(u'&SPU Similaridade')
+        self.menu = self.tr(u'&SPUGeo')
+
+        self.toolbar = iface.mainWindow().findChild(QToolBar, u'SpuGeo')
+
+        if not self.toolbar:
+            print(self.toolbar)
+            self.toolbar = self.iface.addToolBar(u'SpuGeo')
+            self.toolbar.setObjectName(u'SpuGeo')
 
         # Check if plugin was started the first time in current QGIS session
         # Must be set in initGui() to survive plugin reloads
@@ -146,7 +153,8 @@ class SpuSimilaridade:
 
         if add_to_toolbar:
             # Adds plugin icon to Plugins toolbar
-            self.iface.addToolBarIcon(action)
+            #self.iface.addToolBarIcon(action)
+            self.toolbar.addAction(action)
 
         if add_to_menu:
             self.iface.addPluginToMenu(
@@ -175,7 +183,7 @@ class SpuSimilaridade:
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
             self.iface.removePluginMenu(
-                self.tr(u'&SPU Similaridade'),
+                self.tr(u'&SPUGeo'),
                 action)
             self.iface.removeToolBarIcon(action)
 
