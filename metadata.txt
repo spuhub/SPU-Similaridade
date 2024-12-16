@@ -4,15 +4,15 @@
 
 [general]
 name=SPU Similaridade
-qgisMinimumVersion=3.0
+qgisMinimumVersion=3.34
 description=Calculates the Geographic Similarity Index (GIS) of similarity and the Equivalent Rectangle Method (ERM).
-version=0.1
+version=0.2
 author=SPU
-email=guilherme.nascimento@planejamento.gov.br
+email=guilherme.nascimento.nasc@gmail.com; cggeo.spu@gestao.gov.br
 
 about=Calculates the Geographical Similarity Index (GSI) of similarity and the Equivalent Rectangle Method (ERM) between two polygons of different layers.
 
-tracker=http://bugs
+tracker=https://github.com/spuhub/SPU-Similaridade/issues
 repository=https://github.com/guilhermehrn/spu-similaridade.git
 # End of mandatory metadata
 
@@ -20,12 +20,18 @@ repository=https://github.com/guilhermehrn/spu-similaridade.git
 
 hasProcessingProvider=no
 # Uncomment the following line and add your changelog:
-# changelog=
+# changelog= Version 0.1 (03/03/2020):
+                - Initial version.
+              Version 0.2 (13/12/2024):
+                - Correction of bugs related.
+                - Lybrary update.
+                - Author update.
+                - toolbar update.
 
 # Tags are comma separated with spaces allowed
 tags=python
 
-homepage=http://homepage
+homepage=https://github.com/spuhub/SPU-Similaridade
 category=Plugins
 icon=icon.png
 # experimental flag
